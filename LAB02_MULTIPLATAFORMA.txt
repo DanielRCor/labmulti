@@ -1,0 +1,53 @@
+LAB02_MULTIPLATAFORMA
+----------------------------
+class Profesor {
+  String dni;
+  String nombre;
+  double sueldoBruto;
+
+  Profesor.nombre(this.dni, this.nombre, this.sueldoBruto);
+  double calcularSueldoNeto() {
+    return sueldoBruto - (sueldoBruto * 0.08);
+  }
+
+  
+  
+  @override
+  String toString() {
+    return 'DNI: $dni, Nombre: $nombre, Sueldo Bruto: ${sueldoBruto.toStringAsFixed(2)}';
+  }
+
+  void imprimirDatos() {
+    print('DNI: $dni');
+    print('Nombre: $nombre');
+    print('Sueldo Bruto: ${sueldoBruto.toStringAsFixed(2)}');
+  }
+}
+void main() {
+  Profesor p1 = Profesor.nombre('12345678A', 'Hugo', 2500.00);
+  
+  
+  Profesor p2 = Profesor.nombre('87654321B', 'Ana', 3000.50);
+
+  print('Datos del Profe 1 ');
+  
+  p1.imprimirDatos();
+  
+  print('Datos del Profe 2 ');
+  
+  p2.imprimirDatos();
+
+  print('Todos los datos (p1) ');
+  
+  print(p1);
+
+  print('Todos los datos (p2) ');
+  
+  print(p2);
+
+  print('--- Sueldo Neto ---');
+  
+  print('Sueldo Neto de p1: ${p1.calcularSueldoNeto().toStringAsFixed(2)}');
+  
+  print('Sueldo Neto de p2: ${p2.calcularSueldoNeto().toStringAsFixed(2)}');
+}
